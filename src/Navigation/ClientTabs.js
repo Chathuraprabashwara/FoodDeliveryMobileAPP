@@ -61,6 +61,8 @@ export default function RootClientTabs() {
           ),
         }}
       />
+
+
     </ClientTabs.Navigator>
   );
 }

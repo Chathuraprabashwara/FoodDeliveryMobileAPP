@@ -1,42 +1,47 @@
 import React from "react";
-import {
-  createNativeStackNavigator,
-  
-} from "@react-navigation/native-stack";
-import { TransitionPresets } from '@react-navigation/stack';
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { TransitionPresets } from "@react-navigation/stack";
 import SignInWelcomeScreen from "../screens/authScreens/SignInWelcomeScreen";
 import SignInScreen from "../screens/authScreens/SignInScreens";
 import HomeScreen from "../screens/HomeScreen";
 import RootClientTabs from "./ClientTabs";
+import RestaurentMapScreen from "../screens/RestaurentMapScreen";
 
 const Auth = createNativeStackNavigator();
 
 export default function Authstack() {
   return (
-    <Auth.Navigator 
-    >
+    <Auth.Navigator>
       <Auth.Screen
         name="SignInWelcomeScreen"
         component={SignInWelcomeScreen}
         options={{
           headerShown: false,
-         ...TransitionPresets.ModalPresentationIOS
-        }}     
+          ...TransitionPresets.ModalPresentationIOS,
+        }}
       />
       <Auth.Screen
         name="SignInScreen"
         component={SignInScreen}
         options={{
           headerShown: false,
-         ...TransitionPresets.ModalPresentationIOS
+          ...TransitionPresets.ModalPresentationIOS,
         }}
       />
-       <Auth.Screen
+      <Auth.Screen
         name="RootClientTabs"
         component={RootClientTabs}
         options={{
           headerShown: false,
-         ...TransitionPresets.ModalPresentationIOS
+          ...TransitionPresets.ModalPresentationIOS,
+        }}
+      />
+      <Auth.Screen
+        name="RestaurentMapScreen"
+        component={RestaurentMapScreen}
+        options={{
+          headerShown: false,
+          ...TransitionPresets.ModalPresentationIOS,
         }}
       />
     </Auth.Navigator>

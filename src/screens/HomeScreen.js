@@ -56,6 +56,7 @@ export default function HomeScreen({ navigation }) {
             <TouchableOpacity
               onPress={() => {
                 setDelivery(false);
+                navigation.navigate("RestaurentMapScreen")
               }}
             >
               <View
@@ -159,16 +160,23 @@ export default function HomeScreen({ navigation }) {
         <View style={styles.headerTextView}>
           <Text style={styles.headerText}>Free Delivery Now</Text>
         </View>
-        <View style={{flexDirection:"row",alignItems:"center" ,marginTop:5,marginLeft:10 }}>
-                      <Text style={styles.countdownText}>Options Chnaging in </Text>
-                      <Countdown
-                      until={3600}
-                      size={14}
-                      digitStyle={{backgroundColor:colors.lightgreen}}
-                      digitTxtStyle={{color:"white"}}
-                      timeToShow={['M','S']}
-                      timeLabels ={{m:'Min',s:'Sec'}}
-                      />
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            marginTop: 5,
+            marginLeft: 10,
+          }}
+        >
+          <Text style={styles.countdownText}>Options Chnaging in </Text>
+          <Countdown
+            until={3600}
+            size={14}
+            digitStyle={{ backgroundColor: colors.lightgreen }}
+            digitTxtStyle={{ color: "white" }}
+            timeToShow={["M", "S"]}
+            timeLabels={{ m: "Min", s: "Sec" }}
+          />
         </View>
         <View>
           <FlatList
@@ -250,7 +258,23 @@ export default function HomeScreen({ navigation }) {
             ))}
           </View>
         </View>
+          {/* end Restaurent in Your area */}
       </ScrollView>
+
+        {/*start  Map icon */}
+
+      { delivery &&
+      <View style={styles.floatButton}>
+        <TouchableOpacity
+        onPress={()=>{
+          navigation.navigate("RestaurentMapScreen")
+        }}
+        >
+          <Icon name="place" type="material" size={32} color={colors.buttons} />
+          <Text style={{ color: colors.grey2 }}>Map</Text>
+        </TouchableOpacity>
+      </View>
+}
     </View>
   );
 }
@@ -342,12 +366,23 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: colors.grey2,
   },
-  countdownText:{
-    marginLeft:5,
-    marginTop:-9,
-    marginRight:5,
-    fontWeight:"bold",
+  countdownText: {
+    marginLeft: 5,
+    marginTop: -9,
+    marginRight: 5,
+    fontWeight: "bold",
     color: colors.grey1,
-    fontSize:16
+    fontSize: 16,
+  },
+  floatButton: {
+    position: "absolute",
+    bottom: 10,
+    right: 15,
+    backgroundColor: "white",
+    elevation: 10,
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    alignItems: "center",
   },
 });

@@ -24,7 +24,7 @@ export default function SignInWelcomeScreen({ navigation }) {
           <View style={styles.slide1}>
             <Image
               source={{
-                url: "https://i.ytimg.com/vi/Nr5jpPI5Y8M/maxresdefault.jpg",
+                url: "https://img.freepik.com/free-photo/juicy-american-burger-hamburger-cheeseburger-with-two-beef-patties-with-sauce-basked-black-space_124865-5964.jpg?w=2000",
               }}
               style={styles.image}
             />
@@ -32,7 +32,7 @@ export default function SignInWelcomeScreen({ navigation }) {
           <View style={styles.slide2}>
             <Image
               source={{
-                url: "https://i.ndtvimg.com/i/2018-02/fried-rice_620x330_81519290654.jpg",
+                url: "http://2.bp.blogspot.com/-KLubE3S7E1U/VzvjjJXMadI/AAAAAAAADAE/bAVxhDJpvZIdRm4zqCi1Mr2Uh_CTmEBbACK4B/s1600/image_5.jpeg",
               }}
               style={styles.image}
             />
@@ -48,7 +48,7 @@ export default function SignInWelcomeScreen({ navigation }) {
           <View style={styles.slide4}>
             <Image
               source={{
-                url: "https://nomadparadise.com/wp-content/uploads/2021/05/sri-lankan-food-02-1024x683.jpg.webp",
+                url: "https://res.cloudinary.com/hamstech/images/v1632121563/Hamstech%20App/Title-Image_80464696efa86/Title-Image_80464696efa86.jpg?_i=AA",
               }}
               style={styles.image}
             />
